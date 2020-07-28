@@ -1,30 +1,25 @@
 
 public class Die {
 
-    private int sides=1;
+    private int sides;
     private int value;
     int [] probabilities;
     private int integer;
 
-    public int getSides() {
-        return sides;
-    }
 
-    public int getValue() {
-        return value;
-    }
 
 
 
     public Die(int sides, int... probabilities){
         this.sides = sides;
+
         this.probabilities = probabilities;
     }
 
     public void setProbabilities(int [] probabilities) {
 
         this.probabilities = probabilities;
-        Die theDice = new Die(sides);
+        Die theDice = new Die(sides, integer);
         theDice.Roll();
 
     }
@@ -57,7 +52,7 @@ public class Die {
                 else{
                     percentages[i] = chances;
                 }
-                System.out.println(percentages[i]);
+                //System.out.println(percentages[i]);
             }
 
             double random = Math.random();
